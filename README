@@ -1,0 +1,4 @@
+These are two preload libraries that control whether an application is
+fully locked in memory or whether new mappings should be populated. The
+intent is that they can be used to reduce minor faults in latency sensitive
+applications when the source code is not available or cannot be rebuilt.
