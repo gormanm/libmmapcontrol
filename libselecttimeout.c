@@ -36,7 +36,7 @@ int select(int nfds, fd_set *readfds, fd_set *writefds,
 			fd_set *exceptfds, struct timeval *timeout)
 {
 	load_symbols();
-	if (!timeout->tv_sec && !timeout->tv_usec)
+	if (timeout && !timeout->tv_sec && !timeout->tv_usec)
 		timeout->tv_usec = 10000;
 
 	return (*_select)(nfds, readfds, writefds, exceptfds, timeout);
